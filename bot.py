@@ -1,8 +1,6 @@
 import requests
 import tweepy
 import random
-import schedule
-import time
 import os
 import json
 import google.generativeai as genai
@@ -246,13 +244,3 @@ def tweet_movie():
         print(f"Rate limit exceeded: {e}")
     except Exception as e:
         print(f"Error tweeting: {e}")
-
-# Schedule to run daily
-schedule.every().day.at("09:00").do(tweet_movie)
-
-# Run the scheduler
-while True:
-    schedule.run_pending()
-    time.sleep(60)
-
-
