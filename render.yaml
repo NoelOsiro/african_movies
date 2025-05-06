@@ -1,10 +1,9 @@
 services:
-  - type: cron
-    name: african-movie-tweeter
-    env: python
-    schedule: "@daily"  # change this to "@hourly", "0 9 * * *", etc. as needed
+  - type: worker
+    name: african-cinema-tweeter
+    runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python tweet_script.py
+    startCommand: python bot.py
     envVars:
       - key: TMDB_BEARER_TOKEN
         value: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMDdlODhlMTlmNzIxN2E5NTE1YTI3MDkyN2JmMmQ1NyIsIm5iZiI6MS43NDY1MzA1MDkwMDE5OTk5ZSs5LCJzdWIiOiI2ODE5ZjBjYzhmNDIyOGNlOTA0ZmYwODgiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.TMOks08qaEKfvmBms5czte52yJfiVGV24U1gkcWWDTw

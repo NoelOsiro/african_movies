@@ -247,18 +247,12 @@ def tweet_movie():
     except Exception as e:
         print(f"Error tweeting: {e}")
 
-# # Schedule to run daily
-# schedule.every().day.at("09:00").do(tweet_movie)
-
-# # Run the scheduler
-# while True:
-#     schedule.run_pending()
-#     time.sleep(60)
-
 # Schedule to run daily
-# schedule.every().day.at("09:00").do(tweet_movie)
+schedule.every().day.at("09:00").do(tweet_movie)
 
 # Run the scheduler
 while True:
-    tweet_movie()
+    schedule.run_pending()
     time.sleep(60)
+
+
