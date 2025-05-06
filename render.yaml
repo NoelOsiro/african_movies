@@ -1,0 +1,20 @@
+services:
+  - type: cron
+    name: african-movie-tweeter
+    env: python
+    schedule: "@daily"  # change this to "@hourly", "0 9 * * *", etc. as needed
+    buildCommand: pip install -r requirements.txt
+    startCommand: python tweet_script.py
+    envVars:
+      - key: TMDB_BEARER_TOKEN
+        value: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMDdlODhlMTlmNzIxN2E5NTE1YTI3MDkyN2JmMmQ1NyIsIm5iZiI6MS43NDY1MzA1MDkwMDE5OTk5ZSs5LCJzdWIiOiI2ODE5ZjBjYzhmNDIyOGNlOTA0ZmYwODgiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.TMOks08qaEKfvmBms5czte52yJfiVGV24U1gkcWWDTw
+      - key: GEMINI_API_KEY
+        value: AIzaSyBG20hGrVm-x8Zh2FbyGouwQq4A-_Q5ysY
+      - key: X_CONSUMER_KEY
+        value: X0YrqI7eU43DWn9vG17ZSyyRF
+      - key: X_CONSUMER_SECRET
+        value: EXq9i4GWelwkvQhp5Vwps43cZY4w1RYTjRJy3oZ3CKMZ6CnLBW
+      - key: X_ACCESS_TOKEN
+        value: 2419492390-ICDDfzRV5e29Oeb6EZ8tclan99RvckOoLypAiNI
+      - key: X_ACCESS_TOKEN_SECRET
+        value: TBVV24y2NQywQ0jVLzznDOjorqL56nrtRqectMnkHlUGv
