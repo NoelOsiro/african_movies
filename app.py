@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from main import tweet_movie
+from bot import tweet_movie
 
 app = FastAPI()
 
